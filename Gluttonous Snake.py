@@ -110,14 +110,12 @@ def main():
          #如果吃掉奖励莓，则重新生成
          if bonusberrySpawned == 0 and bonused == False:
              bonusEnd = time.time()
-             print(bonusEnd)
              bonused = True
              getStart = False
              x = random.randrange(1,36)
              y = random.randrange(1,64)
              bonusberryPosition = [int(x*10),int(y*10)]   
              bonusberrySpawned = 1
-             print(math.exp(7-(bonusEnd-bonusStart)))
              score += int(math.exp(7-(bonusEnd-bonusStart)))
 
              
@@ -144,7 +142,7 @@ def main():
              if getStart == False:
                  bonusStart=time.time()
                  getStart = True
-                 print(bonusStart)
+             
          #绘制显示层：障碍
          for position in block:
              pygame.draw.rect(playSurface,brickredColor,(position[0],position[1],10,10))
